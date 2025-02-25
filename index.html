@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ryan Josh Cedrick M. Baron - Portfolio</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+</head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const roles = ["Aspiring Information Systems Professional", "Japanese Learner", "Tech Enthusiast", "Gamer"];
+        let roleIndex = 0;
+        let charIndex = 0;
+        const typingElement = document.createElement("span");
+        typingElement.classList.add("typing-container");
+        document.querySelector("header").appendChild(typingElement);
+    
+        function typeEffect() {
+            if (charIndex < roles[roleIndex].length) {
+                typingElement.textContent += roles[roleIndex][charIndex];
+                charIndex++;
+                setTimeout(typeEffect, 100);
+            } else {
+                setTimeout(eraseEffect, 2000);
+            }
+        }
+    
+        function eraseEffect() {
+            if (charIndex > 0) {
+                typingElement.textContent = roles[roleIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(eraseEffect, 50);
+            } else {
+                roleIndex = (roleIndex + 1) % roles.length;
+                setTimeout(typeEffect, 500);
+            }
+        }
+    
+        typeEffect();
+    });
+    </script>
+    
+<body>
+    <header>
+        <img src="assets/img/portfolio/Picture Nako.jpg" alt="Profile Picture" class="profile-img">
+        <h1>Ryan Josh Cedrick M. Baron</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="timeline">
+            <div class="timeline-item left">
+                <h3>2023 - Present</h3>
+                <p>Bachelor of Science in Information Systems, Caraga State University</p>
+            </div>
+            <div class="timeline-item right">
+                <h3>2021</h3>
+                <p>Joined CSU Otaku Guild & CSU Gaming Enthusiasts</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill-box">Computer Literate</div>
+            <div class="skill-box">Rookie HTML, CSS & Bootstrap</div>
+            <div class="skill-box">Basic Microsoft Office Skills</div>
+            <div class="skill-box">English, Filipino, & Basic Japanese Skills</div>
+        </div>
+    </section>
+    
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <div class="certifications-preview">
+            <div class="cert-preview">
+                <img src="assets/img/cert1.jpg" alt="Certification 1">
+            </div>
+            <div class="cert-preview">
+                <img src="assets/img/cert2.jpg" alt="Certification 2">
+            </div>
+            <div class="cert-preview">
+                <img src="assets/img/cert3.jpg" alt="Certification 3">
+            </div>
+        </div>
+        <div class="certifications-container">
+            <div class="certification-box">Sololearn HTML Certificate</div>
+            <div class="certification-box">Sololearn CSS Certificate</div>
+            <div class="certification-box">Sololearn JavaScript Certificate</div>
+        </div>
+    </section>
+    
+    
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:baronryanjoshcedrick@gmail.com">baronryanjoshcedrick@gmail.com</a></p>
+        <p>Phone: +639260640623</p>
+        <p>Location: Ampayon, Butuan City 8600</p>
+    </section>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 Ryan Josh Cedrick M. Baron. All Rights Reserved.</p>
+            <p>Connect with me: 
+                <a href="mailto:baronryanjoshcedrick@gmail.com">Email</a> | 
+                <a href="https://www.facebook.com/NotAHuTaoMain">Facebook</a> | 
+                <a href="https://github.com/rjcbaron">GitHub</a>
+            </p>
+        </div>
+    </footer>
+    <button id="scrollToTop" class="scroll-to-top">
+        &#9650; <!-- Unicode up arrow -->
+    </button>
+    
+    
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let scrollBtn = document.getElementById("scrollToTop");
+    
+            window.addEventListener("scroll", function () {
+                scrollBtn.style.display = window.scrollY > 200 ? "flex" : "none";
+            });
+    
+            scrollBtn.addEventListener("click", function () {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+            });
+        });
+    </script>
+    
+</body>
+</html>
